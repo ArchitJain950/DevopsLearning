@@ -1,0 +1,12 @@
+Question -  Shell script to seperate out colon-separated contents within the passwd file into a new file. Each column should have it's own file.
+
+
+Answer - 
+
+ cut -d: -f1 /etc/passwd > /home/Archit/Day1Assignment/usernames.txt
+cut -d: -f2 /etc/passwd >  /home/Archit/Day1Assignment/passwords.txt
+cut -d: -f3 /etc/passwd > /home/Archit/Day1Assignment/uids.txt
+cut -d: -f4 /etc/passwd > /home/Archit/Day1Assignment/gids.txt
+cut -d: -f5 /etc/passwd > /home/Archit/Day1Assignment/user_info.txt
+cut -d: -f6 /etc/passwd > /home/Archit/Day1Assignment/home_dirs.txt
+cut -d: -f7 /etc/passwd > /home/Archit/Day1Assignment/login_shells.txt
