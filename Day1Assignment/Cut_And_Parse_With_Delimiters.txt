@@ -1,7 +1,7 @@
 Question -  Shell script to seperate out colon-separated contents within the passwd file into a new file. Each column should have it's own file.
 
 
-Answer - 
+Answer -  -------------------USING CUT --------- 
 
  cut -d: -f1 /etc/passwd > /home/Archit/Day1Assignment/usernames.txt
 cut -d: -f2 /etc/passwd >  /home/Archit/Day1Assignment/passwords.txt
@@ -10,3 +10,15 @@ cut -d: -f4 /etc/passwd > /home/Archit/Day1Assignment/gids.txt
 cut -d: -f5 /etc/passwd > /home/Archit/Day1Assignment/user_info.txt
 cut -d: -f6 /etc/passwd > /home/Archit/Day1Assignment/home_dirs.txt
 cut -d: -f7 /etc/passwd > /home/Archit/Day1Assignment/login_shells.txt
+
+
+
+-----------USING AWK -------------------------------
+
+awk -F: '{print $1}'   /etc/passwd > /home/Archit/Day1Assignment/usernames2.txt
+awk -F: '{print $2}'  /etc/passwd > /home/Archit/Day1Assignment/passwords2.txt
+awk -F: '{print $3}'  /etc/passwd > /home/Archit/Day1Assignment/uids2.txt
+awk -F: '{print $4}' /etc/passwd >/home/Archit/Day1Assignment/ gids2.txt
+awk -F: '{print $5}'  /etc/passwd > /home/Archit/Day1Assignment/user_info2.txt
+awk -F: '{print $6}'  /etc/passwd > /home/Archit/Day1Assignment/home_dirs2.txt
+awk -F: '{print $7}'  /etc/passwd > /home/Archit/Day1Assignment/login_shells2.txt
